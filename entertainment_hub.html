@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Entertainment Hub</title>
+<style>
+:root{--bg:#071018;--panel:#0d1a25;--muted:#a9b4c2;--gold:#ffb54a;--cyan:#29baff;--focus:#ffc45c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#f5f7fb;font:16px/1.4 "Segoe UI",system-ui,sans-serif;overflow-x:hidden}button{font:inherit;color:inherit;border:0;cursor:pointer}header{height:68px;display:flex;align-items:center;gap:34px;padding:0 4vw;background:linear-gradient(180deg,rgba(3,9,15,.94),rgba(3,9,15,.48));position:absolute;z-index:5;top:0;width:100%;border-bottom:1px solid #ffffff18}nav{display:flex;align-items:center;gap:30px;height:100%}.nav{background:none;color:#bbc5d1;display:flex;align-items:center;gap:9px;padding:17px 4px;height:100%;font-size:14px;letter-spacing:.05em;position:relative}.nav.active,.nav:hover{color:#fff}.nav.active:after{content:"";height:3px;position:absolute;bottom:0;left:0;right:0;background:var(--gold);box-shadow:0 0 16px var(--gold)}.logo{font-size:14px;color:#ffcb78;font-weight:800;letter-spacing:.16em;margin-right:4px}.spacer{flex:1}.iconbtn{background:none;color:#dce5ee;padding:10px;font-size:19px}.clock{font-size:13px;color:#d5dbe3}.hero{height:380px;padding:50px 4vw 24px;position:relative;display:flex;align-items:center;overflow:hidden;background:radial-gradient(ellipse at 74% 25%,#e89f52 0%,transparent 17%),radial-gradient(ellipse at 62% 35%,#1c6684 0%,transparent 32%),linear-gradient(90deg,#071018 0%,#0b1722 34%,#122b3c 58%,#673d35 83%,#171f2d 100%)}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#071018 0%,rgba(7,16,24,.92) 27%,rgba(7,16,24,.36) 57%,rgba(7,16,24,.06) 100%),linear-gradient(0deg,var(--bg),transparent 30%);z-index:1}.planet{position:absolute;width:470px;height:470px;border-radius:50%;right:15%;top:-225px;background:radial-gradient(circle at 30% 70%,#d8edf3 0%,#5997b4 25%,#183c5a 55%,#071018 72%);box-shadow:0 0 75px #65b6d555}.planet:after{content:"";position:absolute;inset:38% -20%;border:2px solid #f8d29c88;border-radius:50%;transform:rotate(-15deg);box-shadow:0 0 20px #fdc76c66}.city{position:absolute;right:4%;bottom:48px;width:40%;height:170px;opacity:.8;background:linear-gradient(0deg,#101827 0 18%,transparent 18%),repeating-linear-gradient(90deg,transparent 0 18px,#283447 18px 34px,transparent 34px 49px);clip-path:polygon(0 100%,0 73%,4% 73%,4% 47%,7% 47%,7% 65%,11% 65%,11% 27%,14% 27%,14% 62%,19% 62%,19% 44%,23% 44%,23% 76%,29% 76%,29% 20%,32% 0,35% 20%,35% 70%,40% 70%,40% 48%,44% 48%,44% 66%,50% 66%,50% 34%,54% 34%,54% 75%,61% 75%,61% 12%,64% 0,67% 12%,67% 65%,73% 65%,73% 43%,77% 43%,77% 71%,83% 71%,83% 31%,87% 31%,87% 74%,94% 74%,94% 54%,100% 54%,100% 100%)}.hero-copy{position:relative;z-index:2;max-width:610px}.eyebrow{color:var(--gold);font-size:13px;letter-spacing:.25em;font-weight:700}.hero h1{font-size:clamp(34px,4vw,58px);line-height:.98;letter-spacing:.015em;margin:9px 0 12px;text-transform:uppercase}.hero p{color:#d1d8df;max-width:460px;margin:0 0 20px}.actions{display:flex;gap:12px}.primary,.secondary{padding:12px 22px;border-radius:9px;font-weight:700}.primary{background:linear-gradient(135deg,#ffd071,#ffab38);color:#101218;box-shadow:0 0 22px #ffb54a44}.secondary{background:#ffffff16;border:1px solid #ffffff44}.secondary:hover,.primary:hover{transform:translateY(-1px)}main{position:relative;z-index:2;margin-top:-2px;padding-bottom:35px}.shelf{padding:0 3.2vw;margin:0 0 18px}.shelf-head{display:flex;align-items:center;gap:14px;margin:0 0 9px}.shelf h2{font-size:21px;margin:0;font-weight:650}.shelf-sub{font-size:12px;color:#abb8c5;display:flex;gap:6px;align-items:center}.row{display:flex;gap:13px;overflow-x:auto;scrollbar-width:none;padding:4px 3px 9px;scroll-snap-type:x mandatory}.row::-webkit-scrollbar{display:none}.tile{flex:0 0 clamp(190px,19vw,285px);height:145px;position:relative;overflow:hidden;border-radius:9px;border:1px solid #ffffff18;background:#172838;scroll-snap-align:start;transition:transform .16s,outline .16s,box-shadow .16s;outline:0;cursor:pointer}.tile.wide{flex-basis:clamp(245px,23vw,350px);height:156px}.tile:focus,.tile.selected{outline:3px solid var(--focus);outline-offset:1px;transform:scale(1.035);z-index:2;box-shadow:0 0 25px #ffb54a55}.tile-art{position:absolute;inset:0;background:linear-gradient(135deg,var(--c1,#173c59),var(--c2,#101725));overflow:hidden}.tile-art:before{content:"";position:absolute;width:70%;height:120%;right:-5%;top:-22%;border-radius:50%;background:radial-gradient(circle at 30% 35%,#f5d9a466,transparent 26%),linear-gradient(145deg,#c37d5855,#142f51aa 52%,#050b15);transform:rotate(-18deg)}.tile-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 62%),linear-gradient(90deg,rgba(0,0,0,.18),transparent)}.tile:nth-child(2n) .tile-art:before{right:25%;top:5%;width:35%;height:80%;border-radius:50% 50% 12% 12%;background:radial-gradient(circle at 50% 22%,#d8c19c 0 9%,transparent 10%),linear-gradient(90deg,transparent 42%,#17222b 43% 58%,transparent 59%)}.tile:nth-child(3n) .tile-art:before{right:-4%;top:-3%;width:60%;height:70%;background:radial-gradient(ellipse,#e6a66e 0 7%,transparent 8%),linear-gradient(135deg,transparent 35%,#f1944966 36% 45%,transparent 46%)}.tile-title{position:absolute;z-index:1;left:15px;right:12px;bottom:27px;text-transform:uppercase;letter-spacing:.2em;font-weight:700;font-size:15px;text-shadow:0 2px 6px #000}.tile-meta{position:absolute;z-index:1;left:14px;bottom:8px;font-size:11px;color:#e6eaf0}.progress{position:absolute;z-index:2;bottom:0;left:0;height:4px;background:#ffffff3a;width:100%}.progress i{display:block;height:100%;background:var(--cyan);width:var(--pct,35%)}.app-row .tile{height:74px;flex-basis:clamp(155px,15vw,230px);display:flex;align-items:center;justify-content:center;background:var(--app,#111b28);border-radius:10px}.app-row .tile:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#ffffff0c,transparent 55%)}.app-label{position:relative;z-index:1;font-size:17px;font-weight:700}.app-icon{font-size:23px;margin-right:10px;color:var(--appcolor,#fff)}.app-row .tile[data-app="Paramount+"]{--app:#1269d8;--appcolor:#fff}.app-row .tile[data-app="Netflix"]{--app:#15171b;--appcolor:#f22}.app-row .tile[data-app="Prime Video"]{--app:#0878d1}.app-row .tile[data-app="VLC"]{--app:#e97808}.app-row .tile[data-app="YouTube"]{--app:#101b28;--appcolor:#ff3535}.app-row .tile[data-app="YouTube"] .app-icon{color:#ff3434}.app-row .tile[data-app="VLC"] .app-icon{color:#fff}.footer{position:fixed;bottom:13px;right:25px;z-index:7;color:#9eabb8;font-size:12px;text-shadow:0 2px 5px #000}.footer b{color:#dfe5ea}.toast{position:fixed;z-index:20;bottom:42px;left:50%;transform:translate(-50%,15px);background:#172432;border:1px solid #ffffff30;border-radius:10px;padding:11px 16px;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}.toolbar{position:fixed;left:18px;bottom:12px;z-index:7;display:flex;gap:8px}.smallbtn{font-size:12px;background:#111c28dd;border:1px solid #ffffff25;border-radius:7px;padding:7px 10px;color:#ccd6e0}.smallbtn:hover{background:#25384a}.modal{position:fixed;inset:0;z-index:30;background:#000b;display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.dialog{width:min(720px,95vw);background:#101c29;border:1px solid #ffffff22;border-radius:16px;padding:24px;box-shadow:0 30px 100px #000}.dialog h2{margin:0 0 8px}.dialog p{color:#aebac7}.dialog .close{float:right;background:none;font-size:24px;color:#aebac7}.dialog input{display:block;margin:15px 0;width:100%;padding:10px;background:#0b131c;color:#fff;border:1px solid #ffffff30;border-radius:8px}.video{width:100%;max-height:70vh;background:#000}.hidden{display:none!important}@media(max-width:740px){header{gap:12px;padding:0 15px}nav{gap:12px}.nav{font-size:11px}.logo{display:none}.hero{height:400px;padding:100px 20px 20px}.planet{right:-20%;width:360px;height:360px}.city{width:65%}.shelf{padding:0 16px}.tile{flex-basis:220px}.tile.wide{flex-basis:270px}.footer{display:none}}
+
+/* Phone/tablet refinements: compact navigation, larger touch targets and swipeable shelves. */
+@media(max-width:740px){header{height:58px;gap:4px;padding:0 8px;backdrop-filter:blur(12px)}nav{gap:2px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}.nav{flex:0 0 auto;gap:4px;padding:12px 7px;font-size:10px;letter-spacing:0}.nav span{font-size:10px}.logo{display:none}.spacer{display:none}.iconbtn{flex:0 0 32px;padding:5px;font-size:17px}.clock{display:none}.hero{height:390px;padding:92px 18px 22px;align-items:flex-end}.hero-copy{max-width:100%}.hero h1{font-size:clamp(34px,9vw,48px)}.hero p{font-size:14px;max-width:330px;margin-bottom:14px}.eyebrow{font-size:10px}.planet{right:-22%;top:-145px;width:330px;height:330px}.city{right:-10%;width:78%;height:120px;bottom:55px}.shelf{padding:0 14px;margin-bottom:14px}.shelf-head{gap:9px}.shelf h2{font-size:18px}.shelf-sub{font-size:10px}.row{gap:11px;padding:5px 4px 10px;overscroll-behavior-x:contain;touch-action:pan-x}.tile{flex-basis:min(72vw,285px);height:145px}.tile.wide{flex-basis:min(82vw,330px);height:150px}.app-row .tile{height:66px;flex-basis:150px}.app-label{font-size:15px}.toolbar{left:8px;right:8px;bottom:8px;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}.smallbtn{font-size:11px;padding:9px 10px;white-space:nowrap;min-height:38px}.footer{display:none}.toast{bottom:58px;width:max-content;max-width:90vw;text-align:center}.modal{padding:10px}.dialog{width:100%;max-height:92vh;overflow:auto;padding:18px;border-radius:13px}.video{max-height:65vh}}
+@media(max-width:390px){header{padding:0 5px}.nav{padding:11px 5px;font-size:9px}.nav span{font-size:9px}.iconbtn{flex-basis:28px}.hero{height:365px}.hero h1{font-size:34px}.actions{gap:8px}.primary,.secondary{padding:11px 14px;font-size:13px}.shelf h2{font-size:17px}.tile{flex-basis:78vw}.tile.wide{flex-basis:84vw}.app-row .tile{flex-basis:138px}}
+
+
+
+/* Preset wallpapers */
+.wall{position:absolute;inset:0;z-index:0}.wall i{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}.wall i.on{opacity:1}
+.hero.has-wall{background:#071018}.hero.has-wall .planet,.hero.has-wall .city{display:none}
+.wallctl{position:absolute;right:4vw;bottom:18px;z-index:3;display:flex;align-items:center;gap:8px}
+.wallctl button,.wallctl span{background:#071018aa;border:1px solid #ffffff30;border-radius:7px;color:#dce5ee;padding:6px 10px;font-size:12px;backdrop-filter:blur(6px)}.wallctl button:hover{background:#25384a}.wallctl span{border-color:transparent;background:none;text-shadow:0 2px 6px #000}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:14px 0}.wt{height:80px;border-radius:9px;background-size:cover;background-position:center;border:2px solid #ffffff22;position:relative;cursor:pointer;overflow:hidden}.wt:hover{border-color:#ffffff66}.wt.on{border-color:var(--gold);box-shadow:0 0 14px #ffb54a66}.wt span{position:absolute;left:0;right:0;bottom:0;padding:14px 7px 4px;font-size:11px;background:linear-gradient(0deg,#000c,transparent)}.wt.def{background:linear-gradient(90deg,#071018,#122b3c 55%,#673d35)}
+@media(max-width:740px){.wallctl{right:14px;bottom:10px;gap:5px}.wallctl button,.wallctl span{padding:5px 8px;font-size:11px}}
+
+/* Spacing fixes: roomier hero, aligned left edge, no clipped focus outlines */
+.hero{height:auto;min-height:420px;padding:64px 4vw 64px}.hero-copy{max-width:760px}.shelf{padding:0 4vw}.shelf-head{margin-bottom:6px}
+.row{padding:12px 14px 16px;margin:0 -14px}
+@media(max-width:740px){.hero{min-height:380px;padding:48px 18px 64px}.shelf{padding:0 18px}.row{padding:12px 14px 14px;margin:0 -14px}}
+
+/* Wallpaper dropdown */
+.wallctl{top:18px;bottom:auto;right:4vw}
+.wallctl button span{background:none;border:0;padding:0;backdrop-filter:none;text-shadow:none;font-size:inherit}
+.wallctl #wOpen{padding:8px 14px;font-size:13px}
+.wmenu{display:none;position:absolute;top:calc(100% + 8px);right:0;width:230px;max-height:310px;overflow-y:auto;background:#0d1a25f2;border:1px solid #ffffff30;border-radius:12px;padding:6px;box-shadow:0 18px 50px #000c;backdrop-filter:blur(10px)}.wmenu.open{display:block}
+.wallctl .wi{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:0;border-radius:8px;padding:7px 8px;font-size:13px;color:#dce5ee;backdrop-filter:none}.wallctl .wi:hover,.wallctl .wi:focus-visible{background:#ffffff18;outline:0}
+.wi i{flex:0 0 40px;height:24px;border-radius:5px;background-size:cover;background-position:center;border:1px solid #ffffff30}.wi em{flex:1;font-style:normal}.wi b{color:var(--gold);visibility:hidden}.wi.on b{visibility:visible}.wi.on em{color:var(--gold)}
+.wi.wslide{margin-top:4px;border-top:1px solid #ffffff22;border-radius:0 0 8px 8px;padding-top:10px;color:#abb8c5}
+@media(max-width:740px){.wallctl{top:12px;right:14px}.wmenu{max-height:250px;width:210px}}
+
+.tile-title{letter-spacing:.1em;font-size:13px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;bottom:26px}
+
+/* Wallpaper shows across the full banner (light scrim on the left just for text) */
+.hero.has-wall:before{background:linear-gradient(90deg,rgba(7,16,24,.5) 0%,rgba(7,16,24,.22) 40%,rgba(7,16,24,0) 70%),linear-gradient(0deg,var(--bg),transparent 30%)}
+.hero.has-wall .hero-copy h1,.hero.has-wall .hero-copy p,.hero.has-wall .eyebrow{text-shadow:0 2px 14px #000b}
+
+/* Each shelf in its own container, with arrows + visible scrollbar */
+.shelf{margin:0 4vw 22px;padding:16px 18px 10px;background:linear-gradient(180deg,#0e1c29e6,#0a1520e6);border:1px solid #ffffff1c;border-radius:16px;box-shadow:0 10px 30px #0006}
+.shelf-head{margin-bottom:4px}
+.rowwrap{position:relative}
+.row{scrollbar-width:thin;scrollbar-color:#ffb54a88 #ffffff14;margin:0 -10px;padding:14px 10px 16px}
+.row::-webkit-scrollbar{display:block;height:9px}.row::-webkit-scrollbar-track{background:#ffffff12;border-radius:6px}.row::-webkit-scrollbar-thumb{background:#ffb54a88;border-radius:6px}.row::-webkit-scrollbar-thumb:hover{background:#ffb54acc}
+.rarr{position:absolute;top:calc(50% - 8px);transform:translateY(-50%);z-index:4;width:38px;height:38px;border-radius:50%;background:#071018e8;border:1px solid #ffffff44;color:#fff;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px #000a;transition:opacity .15s,background .15s}.rarr:hover{background:#2a4358}.rarr.l{left:-14px}.rarr.r{right:-14px}.rarr.off{opacity:0;pointer-events:none}
+@media(max-width:740px){.shelf{margin:0 10px 16px;padding:12px 12px 8px}.row{margin:0 -8px;padding:12px 8px 14px}.rarr{width:32px;height:32px;font-size:18px}.rarr.l{left:-8px}.rarr.r{right:-8px}}
+
+/* App tiles match movie card size */
+.app-row .tile{height:145px;flex:0 0 clamp(190px,19vw,285px)}.app-label{font-size:20px}.app-icon{font-size:28px;margin-right:12px}
+@media(max-width:740px){.app-row .tile{height:145px;flex-basis:min(72vw,285px)}.app-label{font-size:17px}}
+@media(max-width:390px){.app-row .tile{flex-basis:78vw}}
+
+/* Scroll arrows in the top right of each shelf */
+.shelf{position:relative}.rowwrap{position:static}
+.rarr{top:14px;transform:none;width:34px;height:34px;font-size:20px}.rarr.l{left:auto;right:60px}.rarr.r{left:auto;right:18px}
+@media(max-width:740px){.rarr{top:10px;width:30px;height:30px;font-size:17px}.rarr.l{left:auto;right:50px}.rarr.r{left:auto;right:12px}}
+
+/* No container box; keep the scroll arrows */
+.shelf{background:none;border:0;box-shadow:none;border-radius:0;padding:0;margin:0 4vw 22px}
+.rarr.l{right:42px}.rarr.r{right:0}.rarr{top:-2px}
+@media(max-width:740px){.shelf{margin:0 18px 16px;padding:0}.rarr.l{right:38px}.rarr.r{right:0}.rarr{top:-2px}}
+
+/* Top bar with a single mini YouTube button */
+.topbar{display:flex;align-items:center;gap:8px;height:44px;padding:0 4vw;background:#050d14;border-bottom:1px solid #ffffff14;position:relative;z-index:6}
+.miniapp{display:inline-flex;align-items:center;gap:7px;height:28px;padding:0 12px;border-radius:7px;background:#ffffff12;border:1px solid #ffffff22;color:#fff;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:.03em}.miniapp i{color:#ff3434;font-style:normal;font-size:11px}.miniapp:hover{background:#ff343430;border-color:#ff343488}
+@media(max-width:740px){.topbar{padding:0 14px}}
+
+/* YouTube button floats over the wallpaper (no bar) */
+.topbar{position:absolute;top:16px;left:4vw;height:auto;padding:0;background:none;border:0;z-index:6}
+.miniapp{flex-direction:column;justify-content:center;gap:4px;width:60px;height:60px;padding:0;border-radius:16px;background:#071018b8;border:1px solid #ffffff3a;backdrop-filter:blur(8px);box-shadow:0 6px 18px #0008;font-size:10px;transition:transform .15s,background .15s}
+.miniapp i{font-size:20px;line-height:1}.miniapp:hover{transform:translateY(-2px)}
+.hero{padding-top:104px;min-height:440px}
+@media(max-width:740px){.topbar{left:14px;top:12px;padding:0}.hero{padding-top:92px;min-height:420px}}
+.tile-art.has-art:before{display:none}
+
+/* Server-hub dialogs */
+.urlline{font:600 17px/1.3 ui-monospace,Consolas,Menlo,monospace;color:#ffd071;background:#0b131c;border:1px solid #ffffff22;border-radius:8px;padding:10px 12px;word-break:break-all;margin:8px 0}
+.qr{display:inline-block;background:#fff;padding:12px;border-radius:12px;margin:6px 0}.qr svg{display:block;width:210px;height:210px}
+.frow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;background:#0b131c;border:1px solid #ffffff1c;border-radius:8px;margin:6px 0;color:#dce5ee;font-size:14px;word-break:break-all}
+.fl{max-height:42vh;overflow:auto;margin:8px 0}.fbtn{width:100%;text-align:left;justify-content:flex-start}.fbtn:hover{background:#25384a}
+#vact{margin-top:10px}
+</style>
+</head>
+<body>
+<div class="topbar"><a class="miniapp" href="https://www.youtube.com/" target="_blank" rel="noopener"><i>▶</i> YouTube</a></div>
+<section class="hero" id="home"><div class="wall" id="wall"></div><div class="planet"></div><div class="city"></div><div class="wallctl" id="wallctl"><button id="wOpen" aria-haspopup="listbox" aria-expanded="false">🖼 <span id="wName">Default</span> ▾</button><div class="wmenu" id="wMenu" role="listbox"></div></div><div class="hero-copy"><div class="eyebrow">YOUR PERSONAL CINEMA</div><h1>Your<br>Entertainment Hub</h1><p>All your movies, shows, apps and personal content in one place. Watch, explore and make it yours.</p><div class="actions"><button class="primary" id="heroPlay">▶ &nbsp; PLAY</button><button class="secondary" id="heroInfo">ⓘ &nbsp; MORE INFO</button></div></div></section>
+<main>
+<section class="shelf" id="drives"><div class="shelf-head"><h2>On Your Drives</h2><span class="shelf-sub">▣ &nbsp; LOCAL LIBRARY</span></div><div class="row" id="driveRow"></div></section>
+</main>
+<div class="toolbar"><button class="smallbtn" id="phoneBtn">📱 Phone</button><button class="smallbtn" id="foldersBtn">📁 Folders</button><button class="smallbtn" id="rescan">↻ Rescan</button></div>
+<div class="footer">🎮 &nbsp; <b>Xbox Controller / Remote:</b> Navigate · Select · Back</div><div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="dialog" id="dialog"><button class="close" id="close">×</button><div id="dialogBody"></div></div></div>
+<script>
+const $=s=>document.querySelector(s);let movies=[],selectedIndex=0,visibleTiles=[],CAN_ADMIN=false,HAS_FFMPEG=false,LOADED=false;
+const toast=m=>{let t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),2400)};
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtSize=b=>b>=1073741824?(b/1073741824).toFixed(1)+' GB':Math.round(b/1048576)+' MB';
+const api=async(url,opt)=>{const r=await fetch(url,opt);let j=null;try{j=await r.json()}catch(e){}if(!r.ok)throw new Error((j&&j.error)||r.statusText||'Request failed');return j};
+const jsonOpt=(method,obj)=>({method,headers:{'Content-Type':'application/json'},body:JSON.stringify(obj)});
+
+/* ---- tiles ---- */
+function card(m){const el=document.createElement('div');el.className='tile';el.tabIndex=0;el.dataset.title=m.title;
+el.innerHTML=`<div class="tile-art" style="--c1:#24495a;--c2:#101827"></div><div class="tile-title">${escapeHtml(m.title)}</div><div class="tile-meta">${escapeHtml(m.meta||fmtSize(m.size))}</div>`;
+el.addEventListener('click',()=>openMovie(m));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openMovie(m)}});return el}
+function updateArt(m){if(!m.el||!m.art)return;const a=m.el.querySelector('.tile-art');if(!a)return;a.classList.add('has-art');a.style.background=`linear-gradient(0deg,#0009,transparent 65%),url('${m.art}') center/cover`}
+function render(){const dr=$('#driveRow');dr.innerHTML='';if(!movies.length){const e=document.createElement('div');e.style.cssText='color:#a9b4c2;padding:30px 4px';e.textContent=!LOADED?'Loading your library…':CAN_ADMIN?'No movies yet. Click “📁 Folders” below to add your movie folders.':'No movies yet. Add movie folders from the computer running the hub.';dr.append(e)}
+movies.forEach(m=>{const el=card(m);m.el=el;dr.append(el);if(m.art)updateArt(m)});visibleTiles=[...document.querySelectorAll('.tile')];select(0);queueArt()}
+function select(i){if(!visibleTiles.length)return;selectedIndex=(i+visibleTiles.length)%visibleTiles.length;visibleTiles.forEach((x,n)=>x.classList.toggle('selected',n===selectedIndex));visibleTiles[selectedIndex].scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'})}
+function move(dx,dy){let current=visibleTiles[selectedIndex];if(!current)return;let rows=[...document.querySelectorAll('.row')],row=rows.findIndex(r=>r.contains(current));if(dy===0){let siblings=[...rows[row].querySelectorAll('.tile')],idx=siblings.indexOf(current);select(visibleTiles.indexOf(siblings[(idx+dx+siblings.length)%siblings.length]));return}let targetRow=Math.max(0,Math.min(rows.length-1,row+dy));let target=[...rows[targetRow].querySelectorAll('.tile')];if(!target.length)return;let a=current.getBoundingClientRect(),center=a.left+a.width/2;let best=target.reduce((p,x)=>Math.abs((x.getBoundingClientRect().left+x.offsetWidth/2)-center)<Math.abs((p.getBoundingClientRect().left+p.offsetWidth/2)-center)?x:p,target[0]);select(visibleTiles.indexOf(best))}
+
+/* ---- artwork: folder posters / server thumbnails, loaded a few at a time ---- */
+const artQ=[];let artBusy=0;
+function queueArt(){movies.forEach(m=>{if(!m.artTried){m.artTried=true;artQ.push(m)}});pumpArt()}
+function pumpArt(){while(artBusy<3&&artQ.length){const m=artQ.shift();artBusy++;const img=new Image();const done=()=>{artBusy--;pumpArt()};img.onload=()=>{m.art=img.src;updateArt(m);done()};img.onerror=done;img.src='/art/'+m.id}}
+
+/* ---- dialogs ---- */
+function openMovie(m){const body=$('#dialogBody');
+body.innerHTML=`<h2>${escapeHtml(m.title)}</h2><video class="video" controls autoplay playsinline src="/stream/${m.id}"></video><p id="vmsg"></p><div id="vact"></div>`;
+const v=body.querySelector('video'),msg=$('#vmsg'),act=$('#vact');
+v.addEventListener('error',()=>{if(v.dataset.mode==='compat'){msg.textContent="Compatible mode couldn't play this file either.";return}
+if(HAS_FFMPEG){msg.textContent="This device can't play this file directly (common with MKV, AVI or HEVC). Compatible mode converts it on the fly; seeking is limited.";act.innerHTML='<button class="primary" id="compat">Play in compatible mode</button>';$('#compat').onclick=()=>{v.dataset.mode='compat';msg.textContent='Converting on the fly…';act.innerHTML='';v.src='/transcode/'+m.id;v.play().catch(()=>{})}}
+else msg.textContent="This device can't play this file directly (common with MKV, AVI or HEVC). Install ffmpeg on the computer running the hub and restart it to enable compatible mode, or try another browser."});
+$('#modal').classList.add('open')}
+function closeModal(){const v=$('.video');if(v){v.pause();v.removeAttribute('src');v.load()}$('#modal').classList.remove('open')}
+async function phoneDialog(){const body=$('#dialogBody');body.innerHTML='<h2>Watch on your phone</h2><p>Loading…</p>';$('#modal').classList.add('open');
+try{const j=await api('/api/info');body.innerHTML=`<h2>Watch on your phone</h2><p>Connect your phone to the same Wi‑Fi as this computer, then open:</p>${j.urls.length?j.urls.map(u=>`<div class="urlline">${escapeHtml(u)}</div>`).join(''):'<p>No network address found. Is this computer connected to Wi‑Fi?</p>'}${j.qr?`<div class="qr">${j.qr}</div>`:'<p>Tip: run “pip install qrcode” on the computer to get a scannable QR code here.</p>'}<p>${j.ffmpeg?'ffmpeg found: automatic thumbnails and compatible mode are on.':'ffmpeg not found: install it for automatic thumbnails and to play MKV/AVI on phones.'}</p>`}catch(e){body.innerHTML=`<h2>Watch on your phone</h2><p>${escapeHtml(e.message)}</p>`}}
+async function foldersDialog(){$('#modal').classList.add('open');const body=$('#dialogBody');let j;try{j=await api('/api/folders')}catch(e){body.innerHTML=`<h2>Movie folders</h2><p>Folders can only be changed from the computer running the hub.</p>`;return}
+body.innerHTML=`<h2>Movie folders</h2><p>The hub scans these folders (and their subfolders) on this computer.</p><div id="flist">${j.folders.length?j.folders.map(f=>`<div class="frow"><span>${escapeHtml(f)}</span><button class="smallbtn" data-rm="${escapeHtml(f)}">Remove</button></div>`).join(''):'<p>No folders yet.</p>'}</div><button class="primary" id="addF">+ Add folder</button>`;
+body.querySelectorAll('[data-rm]').forEach(b=>b.onclick=async()=>{try{await api('/api/folders',jsonOpt('DELETE',{path:b.dataset.rm}));await load();foldersDialog()}catch(e){toast(e.message)}});
+$('#addF').onclick=()=>browseDialog('')}
+async function browseDialog(path){const body=$('#dialogBody');let j;try{j=await api('/api/browse?path='+encodeURIComponent(path))}catch(e){toast(e.message);return}
+body.innerHTML=`<h2>Choose a folder</h2><div class="urlline">${escapeHtml(j.path||'This computer')}</div><div class="fl">${j.path?`<button class="frow fbtn" data-go="${escapeHtml(j.parent||'')}">⬑ Up</button>`:''}${j.dirs.map(d=>`<button class="frow fbtn" data-go="${escapeHtml(d.path)}">📁 ${escapeHtml(d.name)}</button>`).join('')||'<p>No subfolders.</p>'}</div><div class="actions" style="margin-top:14px">${j.path?'<button class="primary" id="useF">Use this folder</button>':''}<button class="secondary" id="backF">Back</button></div>`;
+body.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>browseDialog(b.dataset.go));
+$('#backF').onclick=foldersDialog;const u=$('#useF');if(u)u.onclick=async()=>{try{toast('Adding folder and scanning…');await api('/api/folders',jsonOpt('POST',{path:j.path}));await load();foldersDialog()}catch(e){toast(e.message)}}}
+
+/* ---- library from the server ---- */
+const VID=/\.(mp4|m4v|mkv|avi|mov|webm|wmv|mpg|mpeg|ts|flv)$/i;
+function cleanTitle(n,isFile){if(isFile)n=n.replace(/\.[a-z0-9]{2,4}$/i,'');let t=n.replace(/[._]+/g,' ').replace(/\s+/g,' ').trim(),title=t,year='';
+const m=t.match(/[\s(\[]((?:19|20)\d{2})(?=[\s)\]]|$)/);
+if(m&&m.index>0){title=t.slice(0,m.index);year=m[1]}else{title=t.split(/\b(?:480p|576p|720p|1080p|2160p|4k|bluray|brrip|bdrip|webrip|web-dl|hdtv|dvdrip|x264|x265|h264)\b/i)[0]}
+title=title.replace(/[\s\-–(\[]+$/,'').trim()||t;return year?`${title} (${year})`:title}
+function baseName(n){return n.replace(/\.[^.]+$/,'').toLowerCase().replace(/[^a-z0-9]+/g,'')}
+const JUNK=new Set(['etrg','rarbg','yify','yts','ytsmx','ytsam','sub','subs','subtitles','video','videos','movie','movies','film','films','stream','bdmv','1080p','720p','2160p','x264','x265']);
+const isJunk=n=>{const b=baseName(n);return !b||JUNK.has(b)||/^(cd|disc|disk|part)\d+$/.test(b)};
+function buildMovies(entries){const dirs=new Map();
+for(const e of entries){const dir=e.path.split('/').slice(0,-1).join('/');if(!dirs.has(dir))dirs.set(dir,[]);dirs.get(dir).push(e)}
+const out=[];
+for(const [dir,vids] of dirs){const parts=dir?dir.split('/'):[],single=vids.length===1,folder=parts[parts.length-1];
+vids.forEach(e=>{let title,meta='';
+if(single||isJunk(e.name.replace(/\.[^.]+$/,''))){let i=parts.length-1;while(i>=1&&isJunk(parts[i]))i--;
+if(i>=1){title=cleanTitle(parts[i],false);meta=i>=2?cleanTitle(parts[i-1],false):''}else title=cleanTitle(e.name,true)}
+else{title=cleanTitle(e.name,true);meta=parts.length>=2?cleanTitle(folder,false):''}
+out.push({id:e.id,size:e.size,title,meta,art:null})})}
+out.sort((a,b)=>a.title.localeCompare(b.title,undefined,{numeric:true,sensitivity:'base'}));movies=out}
+async function load(rescan){try{const j=await api('/api/library'+(rescan?'?rescan=1':''));CAN_ADMIN=j.admin;HAS_FFMPEG=j.ffmpeg;LOADED=true;$('#foldersBtn').classList.toggle('hidden',!CAN_ADMIN);buildMovies(j.items);render();if(rescan)toast(`${movies.length} movie${movies.length===1?'':'s'} in library`)}catch(e){LOADED=true;render();toast('Could not reach the hub: '+e.message)}}
+
+/* ---- wiring ---- */
+$('#close').onclick=closeModal;$('#modal').addEventListener('click',e=>{if(e.target===$('#modal'))closeModal()});
+$('#phoneBtn').onclick=phoneDialog;$('#foldersBtn').onclick=foldersDialog;$('#rescan').onclick=()=>{toast('Rescanning…');load(true)};
+$('#heroPlay').onclick=()=>{if(movies.length)openMovie(movies[Math.floor(Math.random()*movies.length)]);else toast('No movies yet')};
+$('#heroInfo').onclick=()=>alert('Tap a movie to play it. Use “📱 Phone” to open this hub on your phone over Wi‑Fi. The YouTube button opens YouTube in a new tab.');
+document.addEventListener('keydown',e=>{if(e.target.matches&&e.target.matches('input,textarea'))return;if($('#modal').classList.contains('open')){if(e.key==='Escape'||e.key==='Backspace')closeModal();return}if(['ArrowRight','ArrowLeft','ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();if(e.key==='ArrowRight')move(1,0);if(e.key==='ArrowLeft')move(-1,0);if(e.key==='ArrowDown')move(0,1);if(e.key==='ArrowUp')move(0,-1)}if(e.key==='Enter')visibleTiles[selectedIndex]?.click();if(e.key==='Escape'||e.key==='Backspace')toast('You are at the home screen')});
+let prev={};function pollPad(){let pads=[];try{pads=navigator.getGamepads?.()||[]}catch(err){return}for(const p of pads){if(!p)continue;let b=p.buttons;const down=(i)=>b[i]?.pressed;let now={up:down(12)||p.axes[1]<-.55,down:down(13)||p.axes[1]>.55,left:down(14)||p.axes[0]<-.55,right:down(15)||p.axes[0]>.55,ok:down(0),back:down(1)};for(let k in now)if(now[k]&&!prev[k]){if(k==='up')move(0,-1);if(k==='down')move(0,1);if(k==='left')move(-1,0);if(k==='right')move(1,0);if(k==='ok')visibleTiles[selectedIndex]?.click();if(k==='back')closeModal()}prev=now;break}requestAnimationFrame(pollPad)}window.addEventListener('gamepadconnected',()=>toast('Controller connected — use the D-pad or stick'));
+
+/* ---- 10 built-in preset wallpapers (generated artwork, no files needed) ---- */
+(function(){
+const rnd=seed=>{let x=seed;return()=>{x=(x*16807)%2147483647;return x/2147483647}};
+const stars=(n,seed,maxY,col='#fff')=>{const r=rnd(seed);let o='';for(let i=0;i<n;i++)o+=`<circle cx="${(r()*1600)|0}" cy="${(r()*maxY)|0}" r="${(r()*1.4+.3).toFixed(1)}" fill="${col}" opacity="${(r()*.7+.3).toFixed(2)}"/>`;return o};
+const ridge=(base,amp,seed,fill,step=70)=>{const r=rnd(seed);let p=`M0 500 L0 ${base}`;for(let x=0;x<=1600+step;x+=step)p+=` L${x} ${(base-r()*amp)|0}`;return `<path d="${p} L1600 500 Z" fill="${fill}"/>`};
+const st=a=>a.map(([o,c,op])=>`<stop offset="${o}" stop-color="${c}" stop-opacity="${op==null?1:op}"/>`).join('');
+const lg=(id,a)=>`<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1">${st(a)}</linearGradient>`;
+const rg=(id,a)=>`<radialGradient id="${id}" cx=".38" cy=".35" r=".8">${st(a)}</radialGradient>`;
+const rg2=(id,a)=>`<radialGradient id="${id}">${st(a)}</radialGradient>`;
+const wrap=(d,b)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500" preserveAspectRatio="xMidYMid slice"><defs>${d}</defs>${b}</svg>`;
+const BG=id=>`<rect width="1600" height="500" fill="url(#${id})"/>`;
+const pines=(base,h,seed,fill,op)=>{const r=rnd(seed);let o='';for(let x=-20;x<1650;x+=34){const w=r()*30+40,t=base-h*(r()*.6+.4);o+=`<path d="M${x} ${base} L${(x+w/2)|0} ${t|0} L${(x+w)|0} ${base}Z" fill="${fill}" opacity="${op}"/>`}return o+`<rect y="${base-2}" width="1600" height="${502-base}" fill="${fill}" opacity="${op}"/>`};
+const WP=[];const add=(name,svg)=>WP.push({name,url:'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+
+add('Ringed Planet',wrap(lg('a',[[0,'#040813'],[1,'#1d2d5e']])+rg('p',[[0,'#e8f4ff'],[.35,'#6ea5d6'],[.7,'#1f4575'],[1,'#071226']]),
+BG('a')+stars(170,3,500)+`<circle cx="1180" cy="170" r="190" fill="url(#p)"/><ellipse cx="1180" cy="190" rx="340" ry="56" fill="none" stroke="#f8d29c" stroke-opacity=".55" stroke-width="5" transform="rotate(-14 1180 190)"/><circle cx="800" cy="370" r="26" fill="#9aa8b8"/><circle cx="810" cy="362" r="26" fill="#050b1a" opacity=".4"/>`));
+
+(function(){const r=rnd(7);let b='',x=0;while(x<1600){const w=r()*60+34,h=r()*230+70;b+=`<rect x="${x|0}" y="${(500-h)|0}" width="${w|0}" height="${h|0}" fill="#0a0618"/>`;for(let k=0;k<7;k++)b+=`<rect x="${(x+r()*(w-8))|0}" y="${(500-h+r()*(h-14))|0}" width="4" height="5" fill="${r()>.5?'#4cf3ff':'#ffd75e'}" opacity=".8"/>`;x+=w+r()*14}
+add('Neon City',wrap(lg('a',[[0,'#0a0320'],[.6,'#3b0f5e'],[1,'#ff4f9a']]),BG('a')+stars(70,5,220)+`<circle cx="1230" cy="200" r="80" fill="#ff9bd0" opacity=".85"/>`+b))})();
+
+add('Sunset Peaks',wrap(lg('a',[[0,'#2b1055'],[.55,'#d4527a'],[1,'#ffb35c']]),BG('a')+`<circle cx="800" cy="320" r="95" fill="#fff1c9" opacity=".92"/>`+ridge(330,160,11,'#5a2a6b',90)+ridge(385,140,12,'#3b1b57',80)+ridge(435,110,13,'#1e0f33',70)));
+
+(function(){let w='';for(let i=0;i<9;i++){const y=320+i*20;w+=`<path d="M0 ${y} Q100 ${y-9} 200 ${y} T400 ${y} T600 ${y} T800 ${y} T1000 ${y} T1200 ${y} T1400 ${y} T1600 ${y}" fill="none" stroke="#6f9bd1" stroke-opacity=".18" stroke-width="2"/>`}
+let rf='';for(let i=0;i<14;i++)rf+=`<rect x="${1000-(62-i*3.5)}" y="${312+i*13}" width="${(124-i*7)}" height="4" rx="2" fill="#f4f1dc" opacity="${(.6-i*.04).toFixed(2)}"/>`;
+add('Moonlit Ocean',wrap(lg('a',[[0,'#050a1c'],[1,'#12305a']])+lg('s',[[0,'#16396b'],[1,'#050d1f']]),BG('a')+stars(110,9,260)+`<circle cx="1000" cy="130" r="130" fill="#f4f1dc" opacity=".12"/><circle cx="1000" cy="130" r="62" fill="#f4f1dc"/><rect y="300" width="1600" height="200" fill="url(#s)"/>`+rf+w))})();
+
+add('Aurora Peaks',wrap(lg('a',[[0,'#020711'],[1,'#0b2236']])+lg('g',[[0,'#38ffb0',.0],[.5,'#38ffb0',.75],[1,'#2aa6ff',.0]])+lg('v',[[0,'#b26bff',.0],[.5,'#b26bff',.55],[1,'#38d6ff',.0]])+'<filter id="b"><feGaussianBlur stdDeviation="16"/></filter>',
+BG('a')+stars(130,15,300)+`<path d="M0 200 C300 60 520 300 800 150 S1300 40 1600 170 L1600 320 C1300 210 1000 380 800 290 S300 380 0 330Z" fill="url(#g)" filter="url(#b)"/><path d="M0 260 C320 150 600 330 900 210 S1350 130 1600 240 L1600 340 C1300 280 1050 400 850 330 S350 400 0 360Z" fill="url(#v)" filter="url(#b)"/>`+ridge(390,150,21,'#0d1c2b',110)+ridge(440,110,22,'#050a12',90)));
+
+add('Desert Dusk',wrap(lg('a',[[0,'#3a1c5e'],[.5,'#e0605a'],[1,'#ffc371']]),BG('a')+`<circle cx="450" cy="300" r="72" fill="#ffe3a3"/><path d="M0 360 C300 300 600 420 900 350 S1400 310 1600 360 L1600 500 L0 500Z" fill="#a8452f"/><path d="M0 420 C300 380 700 480 1000 420 S1400 400 1600 430 L1600 500 L0 500Z" fill="#6b2a2a"/><path d="M0 470 C400 440 800 500 1200 465 S1500 460 1600 475 L1600 500 L0 500Z" fill="#3b1a24"/>`));
+
+add('Misty Forest',wrap(lg('a',[[0,'#0f2a2e'],[1,'#a9c4c0']])+lg('f',[[0,'#cfe3df',.0],[1,'#cfe3df',.45]]),BG('a')+`<circle cx="1150" cy="130" r="60" fill="#f1f7f2" opacity=".55"/>`+pines(380,170,31,'#4c7a78',.6)+`<rect y="300" width="1600" height="200" fill="url(#f)"/>`+pines(425,200,32,'#2d5655',.85)+pines(475,230,33,'#10282b',1)));
+
+(function(){let g='';for(let i=1;i<9;i++){const y=330+i*i*2.4;g+=`<line x1="0" y1="${y}" x2="1600" y2="${y}" stroke="#ff3d8b" stroke-opacity=".6" stroke-width="1.5"/>`}for(let x=-900;x<=2500;x+=170)g+=`<line x1="800" y1="330" x2="${x}" y2="500" stroke="#ff3d8b" stroke-opacity=".6" stroke-width="1.5"/>`;
+let bars='';for(let i=0;i<6;i++)bars+=`<rect x="660" y="${290+i*19}" width="280" height="${3+i*2}" fill="#4a0d6e"/>`;
+add('Synthwave',wrap(lg('a',[[0,'#12002b'],[.55,'#5b0f7d'],[1,'#ff3d8b']])+lg('u',[[0,'#ffe44d'],[1,'#ff2f92']]),BG('a')+stars(60,19,220,'#ffd1f0')+`<circle cx="800" cy="270" r="135" fill="url(#u)"/>`+bars+`<rect y="330" width="1600" height="170" fill="#12002b"/>`+g))})();
+
+add('Galaxy',wrap(`<filter id="b"><feGaussianBlur stdDeviation="30"/></filter>`+rg2('p',[[0,'#b46cff',.9],[1,'#b46cff',0]])+rg2('c',[[0,'#3a7bff',.85],[1,'#3a7bff',0]])+rg2('k',[[0,'#ff5fb0',.7],[1,'#ff5fb0',0]]),
+`<rect width="1600" height="500" fill="#04030f"/><g filter="url(#b)"><ellipse cx="560" cy="260" rx="560" ry="150" fill="url(#p)" transform="rotate(-12 560 260)"/><ellipse cx="1050" cy="220" rx="480" ry="130" fill="url(#c)" transform="rotate(-8 1050 220)"/><ellipse cx="820" cy="300" rx="320" ry="90" fill="url(#k)" transform="rotate(-10 820 300)"/></g>`+stars(320,23,500)));
+
+(function(){const r=rnd(41);let e='';for(let i=0;i<80;i++)e+=`<circle cx="${(r()*1600)|0}" cy="${(r()*430)|0}" r="${(r()*2.4+.8).toFixed(1)}" fill="#ffb347" opacity="${(r()*.7+.25).toFixed(2)}"/>`;
+add('Ember Sky',wrap(lg('a',[[0,'#120406'],[.55,'#5a120c'],[1,'#ff7a1a']])+rg2('o',[[0,'#ffb347',.9],[1,'#ff5a00',0]]),BG('a')+`<ellipse cx="800" cy="520" rx="900" ry="230" fill="url(#o)"/>`+e+ridge(410,90,42,'#0a0304',60)))})();
+
+const hero=$('#home'),wall=$('#wall');wall.innerHTML='<i></i><i></i>';let cur=-1,front=0,slide=false,timer=null;
+try{const sv=JSON.parse(localStorage.getItem('hubWall')||'{}');if(Number.isInteger(sv.cur)&&sv.cur>=-1&&sv.cur<WP.length)cur=sv.cur;slide=!!sv.slide}catch(e){}
+const save=()=>{try{localStorage.setItem('hubWall',JSON.stringify({cur,slide}))}catch(e){}};
+function apply(i){cur=((i+1+WP.length+1)%(WP.length+1))-1;hero.classList.toggle('has-wall',cur>=0);const L=wall.children;if(cur>=0){front=1-front;L[front].style.backgroundImage=`url("${WP[cur].url}")`;L[front].classList.add('on');L[1-front].classList.remove('on')}else{L[0].classList.remove('on');L[1].classList.remove('on')}$('#wName').textContent=cur>=0?WP[cur].name:'Default';mark();save();restart()}
+function restart(){clearInterval(timer);if(slide)timer=setInterval(()=>apply(cur+1<WP.length?cur+1:0),12000)}
+const menu=$('#wMenu'),openBtn=$('#wOpen');
+const mk=(i,name,url)=>`<button class="wi" role="option" data-i="${i}"><i style="${url?`background-image:url('${url}')`:'background:linear-gradient(90deg,#071018,#122b3c 55%,#673d35)'}"></i><em>${name}</em><b>✓</b></button>`;
+menu.innerHTML=mk(-1,'Default')+WP.map((w,i)=>mk(i,w.name,w.url)).join('')+'<button class="wi wslide" id="wSlide"></button>';
+function mark(){menu.querySelectorAll('.wi[data-i]').forEach(b=>b.classList.toggle('on',+b.dataset.i===cur));$('#wSlide').textContent=slide?'⏸ Slideshow: on (every 12s)':'▶ Slideshow: off'}
+const setOpen=o=>{menu.classList.toggle('open',o);openBtn.setAttribute('aria-expanded',o)};
+openBtn.onclick=e=>{e.stopPropagation();setOpen(!menu.classList.contains('open'))};
+menu.onclick=e=>{e.stopPropagation();const b=e.target.closest('.wi');if(!b)return;if(b.id==='wSlide'){slide=!slide;if(slide&&cur<0)apply(0);else{save();restart()}mark();return}slide=false;apply(+b.dataset.i);setOpen(false)};
+document.addEventListener('click',()=>setOpen(false));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false)},true);
+$('#wallctl').addEventListener('keydown',e=>e.stopPropagation());
+apply(cur);
+})();
+
+
+/* ---- Scroll arrows for each shelf ---- */
+document.querySelectorAll('.row').forEach(r=>{const w=document.createElement('div');w.className='rowwrap';r.parentNode.insertBefore(w,r);w.append(r);
+const mk=(cls,txt,label,dir)=>{const b=document.createElement('button');b.className='rarr '+cls;b.type='button';b.tabIndex=-1;b.setAttribute('aria-label',label);b.textContent=txt;b.addEventListener('click',()=>r.scrollBy({left:dir*Math.max(200,r.clientWidth*.8),behavior:'smooth'}));b.addEventListener('keydown',e=>e.stopPropagation());return b};
+const L=mk('l','‹','Scroll left',-1),R=mk('r','›','Scroll right',1);w.append(L,R);
+const upd=()=>{const max=r.scrollWidth-r.clientWidth;L.classList.toggle('off',max<=2||r.scrollLeft<=2);R.classList.toggle('off',max<=2||r.scrollLeft>=max-2)};
+r.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);new MutationObserver(()=>setTimeout(upd,0)).observe(r,{childList:true});if(window.ResizeObserver)new ResizeObserver(upd).observe(r);upd()});
+
+
+load();requestAnimationFrame(pollPad);
+
+</script>
+</body>
+</html>
